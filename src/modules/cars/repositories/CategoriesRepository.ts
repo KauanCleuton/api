@@ -1,22 +1,19 @@
 import { Category } from "../model/Category"
+import { ICategoriesRepository, ICreateCategoryDTO } from "./ICategoriesRepository"
 
 
 // DTO =>  Data Transfer Object
-interface ICreateCategoryDTO {
-    name: string,
-    description: string
-}
 
 
-class CategoriesRepository {
-    
+class CategoriesRepository implements ICategoriesRepository {
+
     private categories: Category[]
 
     constructor() {
         this.categories = []
     }
 
-    create({name, description}:ICreateCategoryDTO):void {
+    create({ name, description }: ICreateCategoryDTO): void {
         const category = new Category() // precisa chamar o construtor
         Object.assign(category, {
             name,
