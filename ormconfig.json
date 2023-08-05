@@ -3,10 +3,10 @@
   "host": "localhost",
   "port": 5432,
   "username": "docker",
-  "password": "ignite",
+  "password": "database_ignite",
   "database": "rentx",
-  "migrations": ["./src/database/migrations/*.ts"],
+  "migration": ["./src/database/migration/*.ts"],
   "cli": {
-    "migrationsDir": "./src/database/migrations"
+    "migrationDir": "./src/database/migration"
   }
 }
